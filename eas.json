@@ -1,0 +1,43 @@
+{
+  "cli": {
+    "version": ">= 5.9.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://sendt-api.onrender.com",
+        "EXPO_PUBLIC_ROUTES_API_KEY": "AIzaSyAH9137JBOXbMJLT2B5aQQPbzBQpoKqKPs",
+        "EXPO_PUBLIC_PLACES_API_KEY": "AIzaSyBbupWIR07v1PivgRngYhCmzn8BL3W4LUY"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://sendt-api.onrender.com",
+        "EXPO_PUBLIC_ROUTES_API_KEY": "AIzaSyAH9137JBOXbMJLT2B5aQQPbzBQpoKqKPs",
+        "EXPO_PUBLIC_PLACES_API_KEY": "AIzaSyBbupWIR07v1PivgRngYhCmzn8BL3W4LUY"
+      },
+      "autoIncrement": true,
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://sendt-api.onrender.com",
+        "EXPO_PUBLIC_ROUTES_API_KEY": "AIzaSyAH9137JBOXbMJLT2B5aQQPbzBQpoKqKPs",
+        "EXPO_PUBLIC_PLACES_API_KEY": "AIzaSyBbupWIR07v1PivgRngYhCmzn8BL3W4LUY"
+      },
+      "autoIncrement": true,
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

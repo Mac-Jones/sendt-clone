@@ -1,0 +1,28 @@
+trigger:
+- uat
+
+pr:
+  autoCancel: true
+  drafts: false
+
+pool:
+  vmImage: macos-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.18.x'
+  displayName: 'Install Node.js'
+
+- checkout: self
+  clean: true
+  displayName: Check Repo
+
+- script: npm install -g eas-cli
+  displayName: 'Install EAS ClI'
+  
+- script: npm install
+  displayName: Npm install
+
+- script: EXPO_TOKEN="$(EXPO_CLI_PASSWORD)" eas build -p ios --profile uat --auto-submit --non-interactive --no-wait
+  displayName: 'Run build & submit to App store'
